@@ -6,7 +6,7 @@
 /*   By: fdurban- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 14:15:37 by fdurban-          #+#    #+#             */
-/*   Updated: 2025/11/27 15:13:33 by fdurban-         ###   ########.fr       */
+/*   Updated: 2025/12/01 12:58:18 by fdurban-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ ClapTrap::ClapTrap(): name("default"), hitPoints(10), energyPoints(10), attackDa
 	std::cout<<"Default constructor called"<<std::endl;
 }
 
-ClapTrap::Claptrap(std::string name) : name(name), hitPoints(10), energyPoints(10), attackDamage(0)
+ClapTrap::ClapTrap(std::string name) : name(name), hitPoints(10), energyPoints(10), attackDamage(0)
 {
 	std::cout<<"Default "<<name<<" constructor called"<<std::endl;
 }
-ClapTrap(const ClapTrap &other)
+ClapTrap::ClapTrap(const ClapTrap &other)
 {
 	std::cout<<"Copy constructor called"<<std::endl;
 	*this = other;
@@ -38,11 +38,18 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &other)
 	this->attackDamage = other.attackDamage;
 	return (*this);
 }
+
+ClapTrap::~ClapTrap(){};
+
+int	ClapTrap::getenergyPoints()
+{
+	return (this->energyPoints);
+}
 void	ClapTrap::attack(const std::string& target)
 {
 	if (this->hitPoints > 0 && this->energyPoints > 0)
 	{
-		std::cout<<"ClapTrap"<< this->name<< "attacks"<< target<<"causing"<< this->attackDamage<<" points of damage!"<<std::endl;
+		std::cout<<"ClapTrap "<< this->name<< " attacks "<< target<<" causing "<< this->attackDamage<<" points of damage!"<<std::endl;
 		--this->energyPoints;
 	}
 	else if (this->hitPoints == 0)
@@ -66,7 +73,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	}
 }
 
-void	ClassTrap::beRepaired(unsigned int amount)
+void	ClapTrap::beRepaired(unsigned int amount)
 {
 	if(this->energyPoints > 0 && this->hitPoints > 0)
 	{
@@ -77,5 +84,5 @@ void	ClassTrap::beRepaired(unsigned int amount)
 		std::cout<<this->name<<" cannot be repaired, no energyPoints"<<std::endl;
 	else if(this->hitPoints == 0)
 		std::cout<<this->name<<" cannot be repaired, is dead"<<std::endl;
-	std::cout
+	std::cout<<this->name<<" has been repaired by "<<amount<<std::endl;
 }
