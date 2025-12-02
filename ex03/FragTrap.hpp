@@ -6,13 +6,13 @@
 /*   By: fdurban- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 15:22:31 by fdurban-          #+#    #+#             */
-/*   Updated: 2025/12/01 16:30:17 by fdurban-         ###   ########.fr       */
+/*   Updated: 2025/12/02 13:48:35 by fdurban-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-class FragTrap: public ClapTrap
+class FragTrap: virtual public ClapTrap
 {
 	public:
 		FragTrap();

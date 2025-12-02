@@ -6,12 +6,12 @@
 /*   By: fdurban- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 13:24:30 by fdurban-          #+#    #+#             */
-/*   Updated: 2025/12/01 14:12:18 by fdurban-         ###   ########.fr       */
+/*   Updated: 2025/12/02 13:48:56 by fdurban-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
-class	ScavTrap : public ClapTrap
+class	ScavTrap : virtual public ClapTrap
 {
 	private:
 		bool	isGuardingTheGate;

@@ -6,8 +6,47 @@
 /*   By: fdurban- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 17:11:10 by fdurban-          #+#    #+#             */
-/*   Updated: 2025/12/01 17:37:03 by fdurban-         ###   ########.fr       */
+/*   Updated: 2025/12/02 15:03:53 by fdurban-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "DiamondTrap.hpp"
 
+DiamondTrap::DiamondTrap(): ClapTrap("default_clap_name")
+{
+	this->name = "default";
+	this->hitPoints = 100;
+	this->energyPoints = 50;
+	this->attackDamage = 30;
+	std::cout<<"DiamondTrap default constructor called"<<std::endl;
+}
+
+DiamondTrap::DiamondTrap(std::string name): ClapTrap(name + "clap_name")
+{
+	this->hitPoints = 100;
+	this->energyPoints = 50;
+	this->attackDamage = 30;
+	std::cout<<"DiamondTrap variable default constructor called"<<std::endl;
+}
+
+DiamondTrap::DiamondTrap(const DiamondTrap& other): ClapTrap(other)
+{
+	*this = other;
+	std::cout<<"DiamondTrap copy constructor called"<<std::endl;
+}
+
+DiamondTrap&	DiamondTrap::operator=(const DiamondTrap &other)
+{
+	if(this == &other)
+		return (*this);
+	this->name = other.name;
+	this->hitPoints = other.hitPoints;
+	this->energyPoints = other.energyPoints;
+	this->attackDamage = other.attackDamage;
+	return (*this);
+}
+
+void	DiamondTrap::attack(std::string &target)
+{
+	ScavTrap::attack(target);
+}
