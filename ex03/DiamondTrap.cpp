@@ -6,7 +6,7 @@
 /*   By: fdurban- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 17:11:10 by fdurban-          #+#    #+#             */
-/*   Updated: 2025/12/02 15:03:53 by fdurban-         ###   ########.fr       */
+/*   Updated: 2025/12/02 16:21:25 by fdurban-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ DiamondTrap::DiamondTrap(): ClapTrap("default_clap_name")
 	std::cout<<"DiamondTrap default constructor called"<<std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string name): ClapTrap(name + "clap_name")
-{
-	this->hitPoints = 100;
-	this->energyPoints = 50;
-	this->attackDamage = 30;
+DiamondTrap::DiamondTrap(std::string name): ClapTrap(name + "clap_name"), ScavTrap(), FragTrap() 
+{    
+	this->hitPoints = FragTrap::hitPoints;
+	this->energyPoints = ScavTrap::energyPoints;
+	this->attackDamage = FragTrap::attackDamage;
 	std::cout<<"DiamondTrap variable default constructor called"<<std::endl;
 }
 
