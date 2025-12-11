@@ -6,7 +6,7 @@
 /*   By: fdurban- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 15:22:16 by fdurban-          #+#    #+#             */
-/*   Updated: 2025/12/01 16:31:30 by fdurban-         ###   ########.fr       */
+/*   Updated: 2025/12/11 17:16:28 by fdurban-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,11 @@ FragTrap&	FragTrap::operator=(const FragTrap &other)
 	this->energyPoints = other.energyPoints;
 	this->attackDamage = other.attackDamage;
 	return (*this);
+}
+
+FragTrap::~FragTrap()
+{
+	std::cout<<"FragTrap "<<this->name<<" destructor called"<<std::endl;
 }
 
 void	FragTrap::highFivesGuys()

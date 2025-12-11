@@ -6,7 +6,7 @@
 /*   By: fdurban- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 14:15:37 by fdurban-          #+#    #+#             */
-/*   Updated: 2025/12/01 12:58:18 by fdurban-         ###   ########.fr       */
+/*   Updated: 2025/12/11 16:51:12 by fdurban-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,19 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &other)
 	return (*this);
 }
 
-ClapTrap::~ClapTrap(){};
+ClapTrap::~ClapTrap()
+{
+	std::cout<<"ClapTrap destructor called"<<std::endl;
+}
 
 int	ClapTrap::getenergyPoints()
 {
 	return (this->energyPoints);
+}
+
+int	ClapTrap::getHitPoints()
+{
+	return (this->hitPoints);
 }
 void	ClapTrap::attack(const std::string& target)
 {

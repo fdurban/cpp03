@@ -6,17 +6,32 @@
 /*   By: fdurban- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 12:04:30 by fdurban-          #+#    #+#             */
-/*   Updated: 2025/12/01 14:12:51 by fdurban-         ###   ########.fr       */
+/*   Updated: 2025/12/11 17:02:11 by fdurban-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 int	main()
 {
-	std::string	name = "FERNANDO";
-	std::string	enemy = "CRIS";
-	ScavTrap	scavTrap(name);
-	std::cout<<scavTrap.getenergyPoints()<<std::endl;
-	scavTrap.attack(enemy);
-	std::cout<<scavTrap.getenergyPoints()<<std::endl;
+	std::string	nameClap = "FERNANDO";
+	std::string	nameScav = "CRIS";
+	std::string	nameFrag = "JAIME";
+	ClapTrap	clapTrap(nameClap);
+	ScavTrap	scavTrap(nameScav);
+	FragTrap	fragTrap(nameFrag);
+
+	clapTrap.attack(nameScav);
+	clapTrap.takeDamage(5);
+	clapTrap.beRepaired(1);
+	std::cout<<std::endl;
+	
+	scavTrap.attack(nameClap);
+	scavTrap.guardGate();
+	std::cout<<std::endl;
+
+	fragTrap.highFivesGuys();
+	std::cout<<std::endl;
+	return (0);
+
 }

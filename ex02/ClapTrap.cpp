@@ -6,7 +6,7 @@
 /*   By: fdurban- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 14:15:37 by fdurban-          #+#    #+#             */
-/*   Updated: 2025/12/01 12:58:18 by fdurban-         ###   ########.fr       */
+/*   Updated: 2025/12/11 17:22:59 by fdurban-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,10 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &other)
 	return (*this);
 }
 
-ClapTrap::~ClapTrap(){};
+ClapTrap::~ClapTrap()
+{
+	std::cout<<"ClapTrap "<<this->name<<" Destructor called"<<std::endl;
+};
 
 int	ClapTrap::getenergyPoints()
 {
