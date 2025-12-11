@@ -21,17 +21,16 @@ DiamondTrap::DiamondTrap(): ClapTrap("default_clap_name")
 	std::cout<<"DiamondTrap default constructor called"<<std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string name): ClapTrap(name + "clap_name"), ScavTrap(), FragTrap() 
+DiamondTrap::DiamondTrap(std::string name): ClapTrap(name + "_clap_name")
 {    
 	this->hitPoints = FragTrap::hitPoints;
 	this->energyPoints = ScavTrap::energyPoints;
 	this->attackDamage = FragTrap::attackDamage;
-	std::cout<<"DiamondTrap variable default constructor called"<<std::endl;
+	std::cout<<"DiamondTrap"<<name<<" constructor called"<<std::endl;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap& other): ClapTrap(other)
+DiamondTrap::DiamondTrap(const DiamondTrap& other): ClapTrap(other), ScavTrap(other), FragTrap(other), name(other.name)
 {
-	*this = other;
 	std::cout<<"DiamondTrap copy constructor called"<<std::endl;
 }
 

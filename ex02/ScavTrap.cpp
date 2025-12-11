@@ -19,7 +19,7 @@ ScavTrap::ScavTrap(): ClapTrap()
 
 ScavTrap::ScavTrap(std::string name): ClapTrap(name)
 {
-	std::cout<<"ScavTrap "<<this->name<<" default constructor called"<<std::endl;
+	std::cout<<"ScavTrap "<<this->name<<" constructor called"<<std::endl;
 	this->hitPoints = 100;
 	this->energyPoints = 50;
 	this->attackDamage = 20;
@@ -46,7 +46,7 @@ ScavTrap& ScavTrap::operator=(const ScavTrap &other)
 
 ScavTrap::~ScavTrap()
 {
-	std::cout<<"ScavTrap "<<this->name<<" Default Destructor called"<<std::endl;
+	std::cout<<"ScavTrap "<<this->name<<" Destructor called"<<std::endl;
 }
 
 void	ScavTrap::guardGate()

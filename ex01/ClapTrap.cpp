@@ -19,7 +19,7 @@ ClapTrap::ClapTrap(): name("default"), hitPoints(10), energyPoints(10), attackDa
 
 ClapTrap::ClapTrap(std::string name) : name(name), hitPoints(10), energyPoints(10), attackDamage(0)
 {
-	std::cout<<"Default "<<name<<" constructor called"<<std::endl;
+	std::cout<<"ClapTrap "<<name<<" constructor called"<<std::endl;
 }
 ClapTrap::ClapTrap(const ClapTrap &other)
 {
@@ -41,7 +41,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &other)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout<<"ClapTrap "<<this->name<<" destructor called"<<std::endl;
+	std::cout<<"ClapTrap "<<this->name<<" Destructor called"<<std::endl;
 };
 
 int	ClapTrap::getenergyPoints()

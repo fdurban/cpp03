@@ -14,13 +14,14 @@
 
 ClapTrap::ClapTrap(): name("default"), hitPoints(10), energyPoints(10), attackDamage(0)
 {
-	std::cout<<"Default constructor called"<<std::endl;
+	std::cout<<"ClapTrap Default constructor called"<<std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : name(name), hitPoints(10), energyPoints(10), attackDamage(0)
 {
-	std::cout<<"Default "<<name<<" constructor called"<<std::endl;
+	std::cout<<"ClapTrap "<<name<<" constructor called"<<std::endl;
 }
+
 ClapTrap::ClapTrap(const ClapTrap &other)
 {
 	std::cout<<"Copy constructor called"<<std::endl;
