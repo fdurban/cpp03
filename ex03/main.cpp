@@ -6,15 +6,22 @@
 /*   By: fdurban- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 12:04:30 by fdurban-          #+#    #+#             */
-/*   Updated: 2025/12/02 13:39:26 by fdurban-         ###   ########.fr       */
+/*   Updated: 2025/12/12 12:06:56 by fdurban-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 int	main()
 {
-	std::string	name = "FERNANDO";
-	std::string	enemy = "CRIS";
-	DiamondTrap	diamondTrap(name);
-	diamondTrap.attack(enemy);
+    std::cout << "\n=== Construction Order ===" << std::endl;
+    DiamondTrap diamond("DIAMOND");
+
+    std::cout << "\n=== DiamondTrap Tests ===" << std::endl;
+    diamond.whoAmI();
+    diamond.attack("boss");
+    diamond.whoAmI(); 
+    
+
+    std::cout << "\n=== Destruction Order ===" << std::endl;
+    return (0);
 }
