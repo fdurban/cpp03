@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fdurban- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fdurban- <fdurban-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 13:53:01 by fdurban-          #+#    #+#             */
-/*   Updated: 2025/12/11 17:15:31 by fdurban-         ###   ########.fr       */
+/*   Updated: 2025/12/12 15:29:11 by fdurban-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 ScavTrap::ScavTrap(): ClapTrap(), isGuardingTheGate (false)
 {
 	std::cout<<"Scavtrap default constructor called"<<std::endl;
+	this->hitPoints = 100;
+	this->energyPoints = 50;
+	this->attackDamage = 20;
 }
 
 ScavTrap::ScavTrap(std::string name): ClapTrap(name)

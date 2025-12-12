@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fdurban- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fdurban- <fdurban-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 14:15:37 by fdurban-          #+#    #+#             */
-/*   Updated: 2025/12/11 17:22:59 by fdurban-         ###   ########.fr       */
+/*   Updated: 2025/12/12 15:44:46 by fdurban-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,14 +67,14 @@ void	ClapTrap::attack(const std::string& target)
 void	ClapTrap::takeDamage(unsigned int amount)
 {
 	if (this->hitPoints > amount)
-	{
 		this->hitPoints -= amount;
-	}
-	else
+	else if (this->hitPoints <= amount)
 	{
-		std::cout<<"ClapTrap"<<this->name<<" is already dead"<<std::endl;
-		return ;
+		this->hitPoints = 0;
+		std::cout<<"ClapTrap"<<this->name<<" is dead"<<std::endl;
 	}
+	else if (this->hitPoints == 0)
+		std::cout<<"ClapTrap"<<this->name<<" is already dead"<<std::endl;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
